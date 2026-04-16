@@ -20,10 +20,12 @@
       <div class="section">
         <h2>Datos financieros</h2>
         <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos" />
+        <input type="text" id="txtIngresos" placeholder="Ej: $1200" onblur="validarInput(this)" />
+        <small class="error-msg"></small>
 
         <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos" />
+        <input type="text" id="txtEgresos"  placeholder="Ej: $800" onblur="validarInput(this)" />
+        <small class="error-msg"></small>
 
         <p>Disponible: <span id="spnDisponible"></span></p>
         <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
@@ -32,13 +34,16 @@
       <div class="section">
         <h2>Solicitud de crédito</h2>
         <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto" />
+        <input type="text" id="txtMonto" placeholder="Ej: $1000" onblur="validarInput(this)" />
+        <small class="error-msg"></small>
 
         <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo" />
+        <input type="text" id="txtPlazo" placeholder="Ej: años" onblur="validarInput(this)" />
+        <small class="error-msg"></small>
 
         <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres" />
+        <input type="text" id="txtTasaInteres" placeholder="Ej: 12%" onblur="validarInput(this)" />
+        <small class="error-msg"></small>
 
         <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
         <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
@@ -48,10 +53,10 @@
         </p>
 
         <div class="buttons">
-          <button id="btnCalcularCredito" onclick="calcular()">
+          <button id="btnCalcularCredito" onclick="if(validarFormulario()) calcular()">
             Calcular Crédito
           </button>
-          <button id="btnReiniciar">Reiniciar</button>
+          <button id="btnReiniciar" onclick="reiniciarFormulario()">Reiniciar</button>
         </div>
       </div>
     </div>

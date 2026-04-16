@@ -12,7 +12,7 @@ function recuperarFloat(idcomponten){
 
 function cambiarTexto(idTexto, valor){
   let valorTexto = document.getElementById(idTexto);
-  valorTexto.textContent= valor.toFixed(2);
+  valorTexto.textContent= "$"+valor.toFixed(2);
 }
 
 function recuperarEntero(idcomponten){

@@ -164,3 +164,38 @@ button:hover {
         max-width: 110px; /* Logo un poco más pequeño en móviles */
     }
 }
+
+/* Ajusta el contenedor del campo */
+.section label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.section input {
+  margin-bottom: 2px; /* Reduce espacio entre input y error */
+}
+
+/* Mensaje de error más compacto */
+.error-msg {
+  color: #d93025;
+  font-style: italic;
+  font-size: 11px;
+  margin: 2px 0 8px 2px; /* ↓↓ clave aquí */
+  display: block;
+  line-height: 1.2;
+}
+
+/* Input error */
+.input-error {
+  border: 1px solid #d93025 !important;
+  animation: shake 0.25s ease-in-out;
+}
+
+/* Animación */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}

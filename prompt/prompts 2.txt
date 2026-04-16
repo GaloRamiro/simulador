@@ -1,0 +1,71 @@
+. PROMPT BASE (UI/UX PROFESIONAL)
+
+Actúa como un desarrollador frontend experto en aplicaciones financieras y simuladores de crédito bancarios.
+
+Voy a proporcionarte código HTML, CSS y JavaScript. Tu tarea es mejorar el diseño visual y la experiencia de usuario para que tenga una apariencia moderna, elegante y profesional, similar a la de un banco real.
+
+IMPORTANTE:
+- NO modificar los IDs existentes
+- NO eliminar la lógica existente
+- Se puede reorganizar visualmente
+- Tipografía moderna y limpia
+- Diseño sobrio, profesional y responsive
+
+
+2. PROMPT VALIDACIONES
+
+Actúa como un desarrollador frontend experto en aplicaciones financieras.
+
+Implementa validaciones para inputs en un simulador de crédito.
+
+Reglas:
+- Campos obligatorios
+- Solo números
+- Máximo 5 dígitos
+
+UX:
+- NO usar alert()
+- Mostrar errores debajo del input
+- Texto rojo, cursiva, pequeño
+- Input con borde rojo si hay error
+- Animación suave (shake)
+- Si es válido, limpiar error
+
+Condiciones:
+- Usar eventos onblur
+- NO modificar IDs
+- Código reutilizable
+
+3. PROMPT VALIDACIÓN COMPLETA (BOTÓN)
+
+
+Agrega una validación completa del formulario que se ejecute al presionar el botón "Calcular Crédito".
+
+Debe:
+- Validar todos los campos
+- Mostrar errores debajo de cada input
+- No ejecutar el cálculo si hay errores
+
+Incluir reglas de negocio:
+- Ingresos entre 100 y 99999
+- Egresos no mayores a ingresos
+- Monto entre 500 y 50000
+- Plazo entre 1 y 30 años
+- Tasa entre 1% y 100%
+
+Mantener UX profesional tipo banco.
+
+4. PROMPT FORMATO MONEDA
+
+
+Haz que los campos de ingresos y egresos se formateen automáticamente mientras el usuario escribe.
+
+Formato:
+- Separador de miles (1,000)
+- Máximo 2 decimales
+- No permitir caracteres inválidos
+
+Debe:
+- No romper la lógica existente
+- Mantener valores compatibles con cálculos
+- Experiencia tipo sistema bancario
