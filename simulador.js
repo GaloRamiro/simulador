@@ -33,8 +33,8 @@ function calcular() {
 
   let spRepuesta = document.getElementById("spnEstadoCredito");
   if (respuestaCredito) {
-    spRepuesta.textContent = "Credito Aprobado";
+    spRepuesta.textContent = "Crédito Aprobado";
   } else {
-    spRepuesta.textContent = "Credito Rechazado";
+    spRepuesta.textContent = "Crédito Rechazado";
   }
 }
