@@ -22,3 +22,8 @@ function calularCuotaMensual(total, plazoAnios){
     return valorMensual = total / (plazoAnios*12);
 
 }
+
+function analizarCredito(capacidadPago, cuotaMensual){
+    return capacidadPago > cuotaMensual;
+
+}

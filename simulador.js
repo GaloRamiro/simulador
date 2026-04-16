@@ -15,7 +15,7 @@ function calcular(){
    let spDisponible = document.getElementById("spnDisponible"); 
    spDisponible.textContent=valor.toFixed(2);
    
-   let CapacidadPago = calculaCapacidadPago(valor);
+   let capacidadPago = calculaCapacidadPago(valor);
    let spCapacidadPago= document.getElementById("spnCapacidadPago");
    spCapacidadPago.textContent=CapacidadPago.toFixed(2);
 
@@ -47,6 +47,14 @@ function calcular(){
    let cuotaMensual = calularCuotaMensual(totalPagar,plazoEntero);
    let spCuotaMensual = document.getElementById("spnCuotaMensual");
    spCuotaMensual.textContent = cuotaMensual.toFixed(2);
+    
 
+   let respuestaCredito = analizarCredito(capacidadPago, cuotaMensual);
+   let spRepuesta = document.getElementById("spnEstadoCredito");
+   if (respuestaCredito){
+      spRepuesta.textContent="Credito Aprobado"
+   }else{
+      spRepuesta.textContent="Credito Rechazado"
+   }
 }
 
