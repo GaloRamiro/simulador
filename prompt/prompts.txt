@@ -1,0 +1,379 @@
+Actúa como un desarrollador frontend senior especializado en diseño UI/UX moderno para aplicaciones fintech premium (tipo apps móviles como billeteras digitales).
+
+Te voy a proporcionar un archivo HTML y un archivo CSS. Tu tarea es transformar completamente el diseño visual para que tenga una apariencia moderna, elegante y minimalista, inspirada en interfaces tipo app financiera (fintech), similar a una billetera digital moderna.
+
+⚠️ REGLAS ESTRICTAS:
+
+
+
+
+
+NO debes cambiar los IDs existentes en el HTML.
+
+
+
+NO debes modificar la lógica funcional.
+
+
+
+NO debes eliminar el CSS actual.
+
+
+
+SOLO puedes agregar nuevas clases o estilos adicionales.
+
+
+
+Puedes reorganizar visualmente los elementos (layout), pero sin romper su funcionalidad.
+
+
+
+NO usar frameworks ni librerías externas (Bootstrap, Tailwind, etc.).
+
+🎯 OBJETIVO:
+
+
+
+Convertir el diseño en una interfaz moderna tipo app fintech, evitando completamente estilos antiguos de banca tradicional.
+
+Debe parecer:
+
+
+
+
+
+Una app móvil premium
+
+
+
+Minimalista, limpia y elegante
+
+
+
+Con excelente jerarquía visual
+
+
+
+Moderna (NO estilo años 90)
+
+🎨 ESTILO VISUAL:
+
+
+
+
+
+Inspiración en apps fintech modernas (wallets digitales, dashboards minimalistas)
+
+
+
+Diseño limpio, con mucho espacio (aire)
+
+
+
+Uso de tarjetas (cards)
+
+
+
+Nada rígido ni pesado
+
+🎨 COLORES:
+
+
+
+
+
+Fondo general: #F5F7FA
+
+
+
+Tarjetas: #FFFFFF
+
+
+
+Color principal: #2E6FF2 (azul moderno)
+
+
+
+Secundario: #0A2540 (azul oscuro elegante)
+
+
+
+Acentos:
+
+Verde (aprobado)
+
+
+
+Rojo (rechazado)
+
+
+
+Se pueden usar degradados suaves (muy sutiles)
+
+🔤 TIPOGRAFÍA:
+
+
+
+
+
+Arial, Helvetica, sans-serif
+
+
+
+Jerarquía clara:
+
+Títulos grandes (semi-bold)
+
+
+
+Subtítulos medianos
+
+
+
+Texto limpio y legible
+
+📐 LAYOUT:
+
+
+
+
+
+Diseño tipo app mobile centrado
+
+
+
+Contenedor principal tipo “pantalla”
+
+
+
+Uso de tarjetas (cards) para dividir secciones
+
+
+
+Bordes redondeados: 16px a 20px
+
+
+
+Espaciado amplio (padding generoso)
+
+Estructura sugerida:
+
+
+
+
+
+Card 1: Resultado del crédito
+
+
+
+Card 2: Acciones (botones)
+
+
+
+Card 3: Formulario (inputs)
+
+Usar Flexbox o Grid.
+
+🧩 COMPONENTES:
+
+
+
+
+
+TARJETAS (CARDS):
+
+
+
+Fondo blanco
+
+
+
+Bordes redondeados
+
+
+
+Sombra suave:
+
+
+
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+
+
+INPUTS:
+
+
+
+Fondo gris claro
+
+
+
+Bordes suaves
+
+
+
+Buen padding
+
+
+
+Focus moderno:
+
+Borde azul
+
+
+
+Efecto glow suave
+
+
+
+BOTONES:
+
+
+
+Estilo moderno tipo “pill”
+
+
+
+Bordes totalmente redondeados
+
+
+
+Color azul principal
+
+
+
+Hover con transición suave
+
+
+
+Ligero efecto de elevación o escala
+
+
+
+RESULTADO DEL CRÉDITO:
+
+
+
+Muy destacado visualmente
+
+
+
+Texto grande
+
+
+
+Colores:
+
+Verde → aprobado
+
+
+
+Rojo → rechazado
+
+
+
+Puede incluir badge o bloque resaltado
+
+✨ EFECTOS:
+
+
+
+
+
+Transiciones suaves (0.2s – 0.3s)
+
+
+
+Sombras modernas y difusas
+
+
+
+Microinteracciones en botones
+
+
+
+Sensación de profundidad (layers)
+
+📱 RESPONSIVE (OBLIGATORIO):
+
+
+
+Debe adaptarse a:
+
+
+
+Mobile:
+
+Diseño en columna
+
+
+
+Botones grandes
+
+
+
+Tablet:
+
+Mejor distribución del espacio
+
+
+
+Desktop:
+
+Centrado con ancho máximo
+
+
+
+Mantener estilo tipo app (no estirar demasiado)
+
+Usar media queries, Flexbox o Grid.
+
+🚫 EVITAR:
+
+
+
+
+
+Formularios HTML básicos sin estilo
+
+
+
+Botones cuadrados
+
+
+
+Bordes duros
+
+
+
+Colores planos sin profundidad
+
+
+
+Diseño tipo banca antigua
+
+
+
+Elementos pegados sin espacio
+
+📦 ENTREGA:
+
+
+
+
+
+Proporcionar SOLO el CSS adicional
+
+
+
+Indicar nuevas clases si se agregan
+
+
+
+Mantener compatibilidad total con el HTML y JS actual
+
+🎯 RESULTADO FINAL:
+
+
+
+Debe verse como una app fintech moderna, elegante, limpia, profesional y totalmente responsive. esperame te susbo lso codigos
