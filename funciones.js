@@ -3,3 +3,8 @@
 function calcularDisponible(ingresos, egresos){
      return Math.max(0,ingresos - egresos );
 }
+
+function calculaCapacidadPago(montoDisponible){
+    return capacidadPago = Math.max(0,montoDisponible *0.5);
+    
+}

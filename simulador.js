@@ -12,8 +12,13 @@ function calcular(){
 
    let valor=calcularDisponible(floatingreso, floatengreso);
 
-   let spTexto = document.getElementById("spnDisponible"); 
-   spTexto.textContent=valor.toFixed(2);
+   let spDisponible = document.getElementById("spnDisponible"); 
+   spDisponible.textContent=valor.toFixed(2);
+   
+   let CapacidadPago = calculaCapacidadPago(valor);
+   let spCapacidadPago= document.getElementById("spnCapacidadPago");
+   spCapacidadPago.textContent=CapacidadPago.toFixed(2);
+
 }
 
 
