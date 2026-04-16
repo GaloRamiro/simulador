@@ -19,7 +19,24 @@ function calcular(){
    let spCapacidadPago= document.getElementById("spnCapacidadPago");
    spCapacidadPago.textContent=CapacidadPago.toFixed(2);
 
+
+
+   let textoMonto = document.getElementById("txtMonto");
+   let textoplazo = document.getElementById("txtPlazo");
+   let textoTasaInteres = document.getElementById("txtTasaInteres");
+
+   let monto = textoMonto.value;
+   let plazo = textoplazo.value;
+   let tasaInteres = textoTasaInteres.value;
+
+   let montoEntero = parseInt(monto);
+   let plazoEntero = parseInt(plazo);
+   let tasaIntereresEntero = parseInt(tasaInteres);
+
+   let valorInteres = calcularInteresSimple(montoEntero,tasaIntereresEntero,plazoEntero);
+   
+   let spValor = document.getElementById("spnInteresPagar");
+   spValor.textContent = valorInteres.toFixed(2);
+
 }
-
-
 

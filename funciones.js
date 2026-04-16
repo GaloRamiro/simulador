@@ -8,3 +8,8 @@ function calculaCapacidadPago(montoDisponible){
     return capacidadPago = Math.max(0,montoDisponible *0.5);
     
 }
+
+function calcularInteresSimple(monto, tasa, plazoAnios){
+    return calculoInteres= plazoAnios*monto*(tasa/100);
+
+}
