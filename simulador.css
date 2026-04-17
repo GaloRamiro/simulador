@@ -13,8 +13,8 @@ body {
     font-family: 'Arial', sans-serif;
 
     display: flex;
-    justify-content: center; /*  solo horizontal */
-     align-items: flex-start;   /*  permite scroll */
+    flex-direction: column; /* 👈 vertical */
+    min-height: 100vh;
 }
 /* ===== 2. CONTENEDOR EN DOS COLUMNAS ===== */
 .container {
@@ -41,11 +41,9 @@ body {
 }
 
 .logo {
-    max-width: 140px;      /* Tamaño controlado para el logo */
+    width: 220px;
     height: auto;
-    margin-bottom: 12px;
-    display: block;
-    object-fit: contain;
+    margin-bottom: 20px; /* 👈 más espacio */
 }
 
 .header h1 {
@@ -82,10 +80,23 @@ body {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 20px;
-    border-bottom: 2px solid #F1F5F9;
-    padding-bottom: 10px;
 
-    text-align: center; /* 👈 esto los centra */
+    padding-left: 15px; /* espacio para la línea */
+    position: relative;
+
+    text-align: left; /* 👈 cambiamos esto */
+}
+
+.section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: #b82627; /* amarillo */
+    border-radius: 2px;
 }
 
 label {
@@ -184,7 +195,7 @@ button:hover {
         grid-column: span 1;
     }
     .logo {
-        max-width: 110px; /* Logo un poco más pequeño en móviles */
+        width: 140px; /* 👈 aquí sí cambia */
     }
 }
 
@@ -245,3 +256,51 @@ button:hover {
 .section:nth-child(3) {
     animation-delay: 0.4s;
 }
+
+.descripcion {
+  font-size: 14px;
+  color: #475569;
+  margin-top: 10px;
+  text-align: center;
+
+  padding: 20px;
+  border-radius: 20px;
+
+  background: 
+    url("imagenes/fondosecction.webp"),
+    rgba(255, 255, 255, 0.75);
+
+  background-size: 300px, auto;
+  background-repeat: repeat, no-repeat;
+  background-position: center;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px 0;
+
+  text-align: center;
+  font-size: 13px;
+  color: #475569;
+
+  background: #ffffff; /* 👈 blanco sólido */
+
+  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+}
+.footer::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #074a7b, #2E6FF2);
+  margin: 0 auto 10px;
+  border-radius: 10px;
+}
+
