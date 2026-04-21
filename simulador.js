@@ -12,7 +12,7 @@ function calcular() {
   const disponible = calcularDisponible(ingresos, totalEgresos);
   cambiarTexto("spnDisponible", disponible);
 
-  const capacidad = calculaCapacidadPago(disponible);
+const capacidad = calcularCapacidadPago(disponible);
   cambiarTexto("spnCapacidadPago", capacidad);
 
   const monto = recuperarFloat("txtMonto");
@@ -25,7 +25,7 @@ function calcular() {
   const totalPagar = calcularTotalPagar(monto, interes);
   cambiarTexto("spnTotalPrestamo", totalPagar);
 
-  const cuota = calularCuotaMensual(totalPagar, plazo);
+  const cuota = calcularCuotaMensual(totalPagar, plazo);
   cambiarTexto("spnCuotaMensual", cuota);
 
   const esAprobado = analizarCredito(capacidad, cuota);
@@ -41,8 +41,16 @@ function actualizarTotalesEnVivo() {
   const ing = recuperarFloat("txtIngresos");
 
   const totalG = arr + ali + vario;
+  
+  // Solo actualizamos si hay valores para evitar que se vea "$0.00" de golpe
   cambiarTexto("spnTotalGastos", totalG);
-  cambiarTexto("spnDisponible", ing - totalG);
+  
+  const disponible = ing - totalG;
+  cambiarTexto("spnDisponible", disponible);
+  
+  // Corregido: agregamos la 'r' a calcularCapacidadPago
+  const capacidad = calcularCapacidadPago(disponible); 
+  cambiarTexto("spnCapacidadPago", capacidad);
 }
 
 function validarInput(input) {

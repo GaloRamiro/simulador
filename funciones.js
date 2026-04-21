@@ -2,8 +2,8 @@ function calcularDisponible(ingresos, egresos) {
     return Math.max(0, ingresos - egresos);
 }
 
-function calculaCapacidadPago(montoDisponible) {
-    return montoDisponible * 0.4; // Ajustado al 40% para ser más realista
+function calcularCapacidadPago(montoDisponible) {
+    return montoDisponible * 0.4;
 }
 
 function calcularInteresSimple(monto, tasa, plazoAnios) {
@@ -14,7 +14,7 @@ function calcularTotalPagar(monto, interes) {
     return monto + interes + 50; // Gastos administrativos fijos
 }
 
-function calularCuotaMensual(total, plazoAnios) {
+function calcularCuotaMensual(total, plazoAnios) {
     return total / (plazoAnios * 12);
 }
 
