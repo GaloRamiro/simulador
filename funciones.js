@@ -1,29 +1,30 @@
-//AQUI TODA LA LOGICA DE LAS FUNCIONES DEL NEGOCIO
-
-function calcularDisponible(ingresos, egresos){
-    return Math.max(0,ingresos - egresos );
+function calcularDisponible(ingresos, egresos) {
+    return Math.max(0, ingresos - egresos);
 }
 
-function calculaCapacidadPago(montoDisponible){
-    return capacidadPago = Math.max(0,montoDisponible *0.5);
-    
+function calcularCapacidadPago(montoDisponible) {
+    return montoDisponible * 0.4;
 }
 
-function calcularInteresSimple(monto, tasa, plazoAnios){
-    return calculoInteres= plazoAnios*monto*(tasa/100);
-
+function calcularInteresSimple(monto, tasa, plazoAnios) {
+    return monto * (tasa / 100) * plazoAnios;
 }
 
-function calcularTotalPagar(monto, interes){
-    return valorPagar = monto + interes + 100;
+function calcularTotalPagar(monto, interes) {
+    return monto + interes + 50; // Gastos administrativos fijos
 }
 
-function calularCuotaMensual(total, plazoAnios){
-    return valorMensual = total / (plazoAnios*12);
-
+function calcularCuotaMensual(total, plazoAnios) {
+    return total / (plazoAnios * 12);
 }
 
+<<<<<<< HEAD
 function analizarCredito(capacidadPago, cuotaMensual){
     return capacidadPago > cuotaMensual;
 
 }
+=======
+function analizarCredito(capacidadPago, cuotaMensual) {
+    return capacidadPago >= cuotaMensual;
+}
+>>>>>>> 1f964569a01a111348da2fc778928990e6fcca72
