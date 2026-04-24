@@ -1,7 +1,11 @@
-function calcular() {
-  if (!validarFormulario()) return;
+//AQUI EL JAVASCRIPT PARA MANIPULAR EL HTML
 
-<<<<<<< HEAD
+function calcular() {
+  // 🚨 VALIDAR PRIMERO
+  if (!validarFormulario()) {
+    return; //  si hay error, NO calcula
+  }
+
   let recuperarIngreso = recuperarFloat("txtIngresos");
   //Valor recuperados examen
   let recuperarArriendo = recuperarFloat("txtArriendo");
@@ -15,41 +19,41 @@ function calcular() {
   cambiarTexto("spnGastos", gastos);
 
   let valor = calcularDisponible(recuperarIngreso, gastos);
-=======
-  const ingresos = recuperarFloat("txtIngresos");
-  const arriendo = recuperarFloat("txtArriendo");
-  const alimentacion = recuperarFloat("txtAlimentacion");
-  const varios = recuperarFloat("txtVarios");
->>>>>>> 1f964569a01a111348da2fc778928990e6fcca72
 
-  const totalEgresos = arriendo + alimentacion + varios;
-  cambiarTexto("spnTotalGastos", totalEgresos);
+  cambiarTexto("spnDisponible", valor);
 
-  const disponible = calcularDisponible(ingresos, totalEgresos);
-  cambiarTexto("spnDisponible", disponible);
+  let capacidadPago = calculaCapacidadPago(valor);
 
-const capacidad = calcularCapacidadPago(disponible);
-  cambiarTexto("spnCapacidadPago", capacidad);
+  cambiarTexto("spnCapacidadPago", capacidadPago);
 
-  const monto = recuperarFloat("txtMonto");
-  const plazo = recuperarEntero("txtPlazo");
-  const tasa = recuperarFloat("txtTasaInteres");
+  let recuperarMonto = recuperarEntero("txtMonto");
+  let recuperarPlazo = recuperarEntero("txtPlazo");
+  let recuperarInteres = recuperarEntero("txtTasaInteres");
 
-  const interes = calcularInteresSimple(monto, tasa, plazo);
-  cambiarTexto("spnInteresPagar", interes);
+  let valorInteres = calcularInteresSimple(
+    recuperarMonto,
+    recuperarInteres,
+    recuperarPlazo,
+  );
+  cambiarTexto("spnInteresPagar", valorInteres);
 
-  const totalPagar = calcularTotalPagar(monto, interes);
+  let totalPagar = calcularTotalPagar(recuperarMonto, valorInteres);
   cambiarTexto("spnTotalPrestamo", totalPagar);
 
-  const cuota = calcularCuotaMensual(totalPagar, plazo);
-  cambiarTexto("spnCuotaMensual", cuota);
+  let cuotaMensual = calularCuotaMensual(totalPagar, recuperarPlazo);
 
-  const esAprobado = analizarCredito(capacidad, cuota);
-  const spnEstado = document.getElementById("spnEstadoCredito");
-  spnEstado.textContent = esAprobado ? "Crédito Aprobado" : "Crédito Rechazado";
+  cambiarTexto("spnCuotaMensual", cuotaMensual);
+
+  let respuestaCredito = analizarCredito(capacidadPago, cuotaMensual);
+
+  let spRepuesta = document.getElementById("spnEstadoCredito");
+  if (respuestaCredito) {
+    spRepuesta.textContent = "Crédito Aprobado";
+  } else {
+    spRepuesta.textContent = "Crédito Rechazado";
+  }
 }
 
-<<<<<<< HEAD
 function reiniciarFormulario() {
   // inputs
   let ingresos = document.getElementById("txtIngresos");
@@ -99,34 +103,23 @@ function reiniciarFormulario() {
 
   // Estado inicial
   document.getElementById("spnEstadoCredito").textContent = "ANALIZANDO...";
-=======
-// ESTA FUNCIÓN ES LA QUE EVITA QUE SE BORRE EL TOTAL
-function actualizarTotalesEnVivo() {
-  const arr = recuperarFloat("txtArriendo");
-  const ali = recuperarFloat("txtAlimentacion");
-  const vario = recuperarFloat("txtVarios");
-  const ing = recuperarFloat("txtIngresos");
-
-  const totalG = arr + ali + vario;
-  
-  // Solo actualizamos si hay valores para evitar que se vea "$0.00" de golpe
-  cambiarTexto("spnTotalGastos", totalG);
-  
-  const disponible = ing - totalG;
-  cambiarTexto("spnDisponible", disponible);
-  
-  // Corregido: agregamos la 'r' a calcularCapacidadPago
-  const capacidad = calcularCapacidadPago(disponible); 
-  cambiarTexto("spnCapacidadPago", capacidad);
->>>>>>> 1f964569a01a111348da2fc778928990e6fcca72
 }
-
+/**
+ * Función reutilizable para validar inputs de tipo numérico
+ * Reglas:
+ * - No vacío
+ * - Solo números
+ * - Máximo 5 dígitos
+ *
+ * @param {HTMLInputElement} input - Input que dispara la validación
+ * @returns {boolean} - true si es válido, false si hay error
+ */
 function validarInput(input) {
   const valor = input.value.trim();
   const errorMsg = input.nextElementSibling;
+
   let mensaje = "";
 
-<<<<<<< HEAD
   //const esDecimal = ["txtIngresos", "txtEgresos"].includes(input.id);
 
   //examen
@@ -139,32 +132,50 @@ function validarInput(input) {
   //examen
 
   // 1. Vacío
-=======
->>>>>>> 1f964569a01a111348da2fc778928990e6fcca72
   if (valor === "") {
-    mensaje = "Campo obligatorio";
-  } else if (isNaN(valor)) {
-    mensaje = "Ingrese solo números";
+    mensaje = "Este campo es obligatorio";
+  }
+  // 2. Validación según tipo
+  else {
+    if (esDecimal) {
+      // Permite decimales (dinero)
+      if (!/^\d+(\.\d{1,2})?$/.test(valor)) {
+        mensaje = "Formato inválido (ej: 1500.50)";
+      }
+    } else {
+      // Solo enteros
+      if (!/^\d+$/.test(valor)) {
+        mensaje = "Solo números enteros";
+      }
+    }
   }
 
+  // 3. Máximo 5 dígitos (sin contar el punto)
+  const soloNumeros = valor.replace(".", "");
+  if (mensaje === "" && soloNumeros.length > 5) {
+    mensaje = "Máximo 5 dígitos";
+  }
+
+  // ERROR
   if (mensaje !== "") {
     input.classList.add("input-error");
-    if(errorMsg) errorMsg.textContent = mensaje;
+    errorMsg.textContent = mensaje;
+
+    // Animación (para que se repita)
+    input.classList.remove("input-error");
+    void input.offsetWidth;
+    input.classList.add("input-error");
+
     return false;
   }
 
+  // OK
   input.classList.remove("input-error");
-  if(errorMsg) errorMsg.textContent = "";
-
-  // Si el campo es de dinero, actualizamos el total de gastos de una vez
-  if (["txtIngresos", "txtArriendo", "txtAlimentacion", "txtVarios"].includes(input.id)) {
-    actualizarTotalesEnVivo();
-  }
+  errorMsg.textContent = "";
   return true;
 }
 
 function validarFormulario() {
-<<<<<<< HEAD
   const ingresos = document.getElementById("txtIngresos");
 
   //examen
@@ -294,20 +305,4 @@ function actualizarGastosEnTiempoReal() {
   let capacidad = calculaCapacidadPago(disponible);
   cambiarTexto("spnCapacidadPago", capacidad);
 }
-=======
-  const campos = ["txtIngresos", "txtArriendo", "txtAlimentacion", "txtVarios", "txtMonto", "txtPlazo", "txtTasaInteres"];
-  let valido = true;
-  campos.forEach(id => {
-    if (!validarInput(document.getElementById(id))) valido = false;
-  });
-  return valido;
-}
 
-function reiniciarFormulario() {
-  const inputs = document.querySelectorAll("input");
-  inputs.forEach(i => i.value = "");
-  const spans = ["spnTotalGastos", "spnDisponible", "spnCapacidadPago", "spnInteresPagar", "spnTotalPrestamo", "spnCuotaMensual"];
-  spans.forEach(id => document.getElementById(id).textContent = "");
-  document.getElementById("spnEstadoCredito").textContent = "ANALIZANDO...";
-}
->>>>>>> 1f964569a01a111348da2fc778928990e6fcca72

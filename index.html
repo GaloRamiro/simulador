@@ -33,7 +33,6 @@
         />
         <small class="error-msg"></small>
 
-<<<<<<< HEAD
         <!-- Arriendo examen -->
 
         <label for="txtArriendo">Arriendo:</label>
@@ -64,35 +63,8 @@
           oninput="actualizarGastosEnTiempoReal()"
           id="txtVarios"
           placeholder="Ej: $800"
-=======
-        <label for="txtArriendo">Arriendo:</label>
-        <input
-          type="text"
-          id="txtArriendo"
-          placeholder="Ej: $300"
->>>>>>> 1f964569a01a111348da2fc778928990e6fcca72
           onblur="validarInput(this)"
         />
-        <small class="error-msg"></small>
-
-        <label for="txtAlimentacion">Alimentación:</label>
-        <input
-          type="text"
-          id="txtAlimentacion"
-          placeholder="Ej: $200"
-          onblur="validarInput(this)"
-        />
-        <small class="error-msg"></small>
-
-        <label for="txtVarios">Varios:</label>
-        <input
-          type="text"
-          id="txtVarios"
-          placeholder="Ej: $100"
-          onblur="validarInput(this)"
-        />
-        <p>Total gastos: <span id="spnTotalGastos"></span></p>
-        <small class="error-msg"></small>
         <small class="error-msg"></small>
 
         <p>Disponible: <span id="spnDisponible"></span></p>
@@ -136,27 +108,20 @@
           Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span>
         </p>
 
-     <div class="buttons">
-    <button id="btnCalcularCredito" onclick="calcular()">
-        Calcular Crédito
-    </button>
-    <button id="btnReiniciar" onclick="reiniciarFormulario()">
-        Reiniciar
-    </button>
-</div>
+        <div class="buttons">
+          <button
+            id="btnCalcularCredito"
+            onclick="if (validarFormulario()) calcular();"
+          >
+            Calcular Crédito
+          </button>
+          <button id="btnReiniciar" onclick="reiniciarFormulario()">
+            Reiniciar
+          </button>
+        </div>
       </div>
     </div>
-<<<<<<< HEAD
 <footer class="footer">
   <p>Desarrollado por Galo Cisneros · Proyecto académico</p>
 </footer>
-=======
-    <footer class="footer">
-      <p>
-        Autor: Galo Cisneros. Este simulador es un ejercicio realizado en clase.
-      </p>
-    </footer>
-  </body>
->>>>>>> 1f964569a01a111348da2fc778928990e6fcca72
 </html>
-
