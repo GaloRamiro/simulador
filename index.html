@@ -26,22 +26,49 @@
         <label for="txtIngresos">Ingresos:</label>
         <input
           type="text"
+          oninput="actualizarGastosEnTiempoReal()"
           id="txtIngresos"
           placeholder="Ej: $1200"
           onblur="validarInput(this)"
         />
         <small class="error-msg"></small>
 
-        <label for="txtEgresos">Egresos:</label>
+        <!-- Arriendo examen -->
+
+        <label for="txtArriendo">Arriendo:</label>
         <input
           type="text"
-          id="txtEgresos"
+          oninput="actualizarGastosEnTiempoReal()"
+          id="txtArriendo"
+          placeholder="Ej: $800"
+          onblur="validarInput(this)"
+        />
+        <small class="error-msg"></small>
+        <!-- Alimentacion examen -->
+
+        <label for="txtAlimentacion">Alimentacion:</label>
+        <input
+          type="text"
+          oninput="actualizarGastosEnTiempoReal()"
+          id="txtAlimentacion"
+          placeholder="Ej: $800"
+          onblur="validarInput(this)"
+        />
+        <small class="error-msg"></small>
+        <!-- Varios examen-->
+
+        <label for="txtVarios">Varios:</label>
+        <input
+          type="text"
+          oninput="actualizarGastosEnTiempoReal()"
+          id="txtVarios"
           placeholder="Ej: $800"
           onblur="validarInput(this)"
         />
         <small class="error-msg"></small>
 
         <p>Disponible: <span id="spnDisponible"></span></p>
+        <p>Gastos: <span id="spnGastos"></span></p>
         <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
       </div>
 
@@ -94,8 +121,8 @@
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <p>Autor: Galo Cisneros. Este simulador es un ejercicio realizado en clase.</p>
-      </footer>
-  </body>
+<footer class="footer">
+  <p>Desarrollado por Galo Cisneros · Proyecto académico</p>
+</footer>
 </html>
+
